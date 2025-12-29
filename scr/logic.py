@@ -9,7 +9,6 @@ class BotLogic:
         self.create_tables()
     
     def create_tables(self):
-        """Создаем таблицы в базе данных"""
         cursor = self.conn.cursor()
         
         cursor.execute('''
@@ -48,7 +47,6 @@ class BotLogic:
         self.conn.commit()
     
     def parse_time(self, time_str):
-        """Парсит строку времени в секунды"""
         time_str = time_str.lower().strip()
         
         if time_str in ['permanent', 'навсегда', 'perm', 'forever']:
@@ -251,4 +249,5 @@ class BotLogic:
         return True
     
     def close(self):
+
         self.conn.close()
